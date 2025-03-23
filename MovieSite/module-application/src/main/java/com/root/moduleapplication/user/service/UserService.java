@@ -1,5 +1,9 @@
 package com.root.moduleapplication.user.service;
 
+import com.root.moduleapplication.user.dto.UserRequestDto;
+import com.root.moduleapplication.user.dto.UserResponseDto;
+import com.root.moduleapplication.user.repository.UserRepository;
+import com.root.moduledomain.user.User;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

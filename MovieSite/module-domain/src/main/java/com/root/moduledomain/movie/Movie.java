@@ -5,6 +5,8 @@ import com.root.moduledomain.position.Position;
 import com.root.moduledomain.user.User;
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import com.root.moduleapplication.dto;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -12,6 +14,8 @@ import java.util.List;
 
 @Entity
 @Getter
+@Table(name = "movies")
+@NoArgsConstructor
 public class Movie extends Timestamped {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -45,5 +49,9 @@ public class Movie extends Timestamped {
 
     @Column(name = "position")
     private String position;
+
+    public Movie(Movie movieRequestDto) {
+        Movie movie = movieRequestDto;
+    }
 }
 

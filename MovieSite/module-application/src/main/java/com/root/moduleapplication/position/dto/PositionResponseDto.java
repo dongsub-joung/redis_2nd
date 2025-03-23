@@ -1,6 +1,6 @@
-package com.root.modulepresentation.position.dto;
+package com.root.moduleapplication.position.dto;
 
-import com.root.modulepresentation.movie.dto.MovieRequestDto;
+import com.root.moduleapplication.movie.dto.MovieRequestDto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,7 +11,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class PositionRequestDto {
+public class PositionResponseDto {
     private MovieRequestDto movie;
     private String seatNumber;
 }

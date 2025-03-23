@@ -1,6 +1,6 @@
-package com.root.modulepresentation.user.dto;
+package com.root.moduleapplication.user.dto;
 
-import com.root.modulepresentation.movie.dto.MovieRequestDto;
+import com.root.moduleapplication.movie.dto.MovieRequestDto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

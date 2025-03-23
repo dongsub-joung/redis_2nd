@@ -1,5 +1,8 @@
 package com.root.moduleapplication.position.service;
 
+import com.root.moduleapplication.position.dto.PositionRequestDto;
+import com.root.moduleapplication.position.repository.PositionRepository;
+import com.root.moduledomain.position.Position;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
