@@ -23,4 +23,5 @@ public class MovieRequestDto {
     private String position;
 
     private UserRequestDto user;
+    p
 }

@@ -1,6 +1,7 @@
 package com.root.moduleapplication.movie.repository;
 
 import com.root.moduledomain.movie.Movie;
+import com.root.moduledomain.position.Position;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
@@ -10,7 +11,10 @@ public interface MovieRepository extends JpaRepository<Movie, Long> {
     @Override
     Optional<Movie> findById(Long aLong);
 
+//    1주차 구현 과제
+    Optional<List<Movie>> findAllByOrderByReleaseDateDesc();
+
 //    2주차 구현 과제
     Optional<List<Movie>> findAllByTitle(String title);
-    Optional<List<Movie>> findAllByReleaseDate(String releaseDate);
+    Optional<List<Movie>> findAllByThemas(String themas);
 }

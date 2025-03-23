@@ -25,6 +25,9 @@ public class Movie extends Timestamped {
     @OneToMany
     private List<Position> positions = new ArrayList<>();
 
+    @OneToMany
+    private List<Position> themas = new ArrayList<>();
+
     @ManyToOne(optional = false)
     @JoinTable(name = "movies_userId",
             joinColumns = @JoinColumn(name = "user_id"),
@@ -50,7 +53,7 @@ public class Movie extends Timestamped {
     @Column(name = "position")
     private String position;
 
-    public Movie(Movie movieRequestDto) {
+    public Movie(MovieRequestDto movieRequestDto) {
         this.title = movieRequestDto.getTitle();
         this.description = movieRequestDto.getDescription();
         this.releaseDate = movieRequestDto.getReleaseDate();
@@ -58,6 +61,7 @@ public class Movie extends Timestamped {
         this.imgUrl = movieRequestDto.getImgUrl();
         this.position = movieRequestDto.getPosition();
         this.user = movieRequestDto.getUser();
+        this.themas= movieRequestDto.getThemas();
     }
 }
 
