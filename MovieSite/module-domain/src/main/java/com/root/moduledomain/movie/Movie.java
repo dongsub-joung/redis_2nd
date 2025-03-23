@@ -19,7 +19,7 @@ import java.util.List;
 public class Movie extends Timestamped {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    UnsignedLong
+//    @todo UnsignedLong
     private long id;
 
     @OneToMany
@@ -51,7 +51,13 @@ public class Movie extends Timestamped {
     private String position;
 
     public Movie(Movie movieRequestDto) {
-        Movie movie = movieRequestDto;
+        this.title = movieRequestDto.getTitle();
+        this.description = movieRequestDto.getDescription();
+        this.releaseDate = movieRequestDto.getReleaseDate();
+        this.duration = movieRequestDto.getDuration();
+        this.imgUrl = movieRequestDto.getImgUrl();
+        this.position = movieRequestDto.getPosition();
+        this.user = movieRequestDto.getUser();
     }
 }
 
