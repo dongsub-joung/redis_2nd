@@ -4,6 +4,7 @@ import com.root.moduleapplication.movie.dto.MovieRequestDto;
 import com.root.moduleapplication.movie.dto.MovieResponseDto;
 import com.root.moduleapplication.movie.repository.MovieRepository;
 import com.root.moduledomain.movie.Movie;
+import exception.NullCheckException;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -39,7 +40,17 @@ public class MovieServiceImpl {
         for (Movie movie : movieList) {
             movieResponseDtoList.add(new MovieResponseDto(movie));
         }
-        return movieResponseDtoList;
+
+        try {
+            if(movieResponseDtoList.size()>0) {
+                return movieResponseDtoList;
+            }else{
+                throw new NullCheckException("Movie list is empty");
+            }
+        }catch (NullCheckException e){
+            e.printStackTrace();
+        }
+
     }
 
 }
