@@ -5,6 +5,8 @@ import com.root.moduledomain.position.Position;
 import com.root.moduledomain.user.User;
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import com.root.moduleapplication.dto;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -12,14 +14,19 @@ import java.util.List;
 
 @Entity
 @Getter
+@Table(name = "movies")
+@NoArgsConstructor
 public class Movie extends Timestamped {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    UnsignedLong
+//    @todo UnsignedLong
     private long id;
 
     @OneToMany
     private List<Position> positions = new ArrayList<>();
+
+    @OneToMany
+    private List<Position> themas = new ArrayList<>();
 
     @ManyToOne(optional = false)
     @JoinTable(name = "movies_userId",
@@ -45,5 +52,16 @@ public class Movie extends Timestamped {
 
     @Column(name = "position")
     private String position;
+
+    public Movie(MovieRequestDto movieRequestDto) {
+        this.title = movieRequestDto.getTitle();
+        this.description = movieRequestDto.getDescription();
+        this.releaseDate = movieRequestDto.getReleaseDate();
+        this.duration = movieRequestDto.getDuration();
+        this.imgUrl = movieRequestDto.getImgUrl();
+        this.position = movieRequestDto.getPosition();
+        this.user = movieRequestDto.getUser();
+        this.themas= movieRequestDto.getThemas();
+    }
 }
 
