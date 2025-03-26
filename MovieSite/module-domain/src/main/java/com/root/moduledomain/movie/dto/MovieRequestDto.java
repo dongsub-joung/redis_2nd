@@ -1,6 +1,7 @@
 package com.root.moduledomain.movie.dto;
 
 import com.root.moduledomain.genre.dto.GenreRequestDto;
+import com.root.moduledomain.movie.GenreEnum;
 import lombok.*;
 import com.root.moduledomain.position.dto.PositionRequestDto;
 import com.root.moduledomain.user.dto.UserRequestDto;
@@ -23,5 +24,5 @@ public class MovieRequestDto {
     private String position;
 
     private UserRequestDto user;
-    private GenreRequestDto thema;
+    private GenreEnum genre;
 }

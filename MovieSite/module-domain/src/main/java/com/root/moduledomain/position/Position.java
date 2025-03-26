@@ -1,6 +1,5 @@
 package com.root.moduledomain.position;
 
-import com.root.moduledomain.movie.Movie;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

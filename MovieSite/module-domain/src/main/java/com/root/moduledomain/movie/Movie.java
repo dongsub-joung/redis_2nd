@@ -21,12 +21,11 @@ import java.util.List;
 public class Movie extends Timestamped {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    @todo UnsignedLong
     private long id;
 
 
-    @Formula("(SELECT COUNT(*) FROM position WHERE position.movieId = id)")
-    private List<Position> positions;
+    @Formula("(SELECT seatPosition FROM position WHERE position.movieId = id)")
+    private String positions;
 
     @Enumerated(EnumType.STRING)
     private GenreEnum genre;
@@ -64,7 +63,7 @@ public class Movie extends Timestamped {
         this.imgUrl = movieRequestDto.getImgUrl();
         this.position = movieRequestDto.getPosition();
         this.user = new User(movieRequestDto.getUser());
-        this.genres = new ArrayList<>();
+        this.genre= movieRequestDto.getGenre();
     }
 }
 
