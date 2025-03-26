@@ -9,6 +9,6 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 public class GenreRequestDto {
-    private Movie movie;
-    private long themaTypeId;
+    private long id;
+    private long genreTypeId;
 }

@@ -8,6 +8,7 @@ import com.root.moduledomain.user.User;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Formula;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -23,8 +24,9 @@ public class Movie extends Timestamped {
 //    @todo UnsignedLong
     private long id;
 
-    @OneToMany
-    private List<Position> positions = new ArrayList<>();
+
+    @Formula("(SELECT COUNT(*) FROM comment c WHERE c.post_id = id)")
+    private List<Position> positions;
 
     @OneToMany
     private List<Genre> genres = new ArrayList<>();

@@ -12,6 +12,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PositionResponseDto {
-    private MovieRequestDto movie;
-    private String seatNumber;
+    private long id;
+    private long movieId;
+    private String seatPosition;
 }
