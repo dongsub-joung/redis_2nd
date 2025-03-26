@@ -25,11 +25,11 @@ public class Movie extends Timestamped {
     private long id;
 
 
-    @Formula("(SELECT COUNT(*) FROM comment c WHERE c.post_id = id)")
+    @Formula("(SELECT COUNT(*) FROM position WHERE position.movieId = id)")
     private List<Position> positions;
 
-    @OneToMany
-    private List<Genre> genres = new ArrayList<>();
+    @Enumerated(EnumType.STRING)
+    private GenreEnum genre;
 
     @ManyToOne(optional = false)
     @JoinTable(name = "movies_userId",
