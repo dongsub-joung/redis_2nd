@@ -1,6 +1,6 @@
 package com.root.moduleapplication.user.dto;
 
-import com.root.moduleapplication.movie.dto.MovieRequestDto;
+import com.root.moduledomain.movie.dto.MovieRequestDto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -8,10 +8,11 @@ import lombok.Setter;
 
 import java.util.List;
 
-@Getter @Setter
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserRequestDto {
+public class UserResponseDto {
     private List<MovieRequestDto> movies;
     private String positions;
     private String name;
@@ -19,3 +20,4 @@ public class UserRequestDto {
     private String password;
     private Boolean guessed;
 }
+
