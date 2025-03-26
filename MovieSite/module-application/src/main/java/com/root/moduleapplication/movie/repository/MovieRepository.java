@@ -1,13 +1,15 @@
 package com.root.moduleapplication.movie.repository;
 
 import com.root.moduledomain.movie.Movie;
-import com.root.moduledomain.position.Position;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface MovieRepository extends JpaRepository<Movie, Long> {
+    @Override
+    List<Movie> findAll();
+
     @Override
     Optional<Movie> findById(Long aLong);
 

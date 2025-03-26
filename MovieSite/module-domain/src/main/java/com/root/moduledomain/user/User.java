@@ -1,6 +1,8 @@
 package com.root.moduledomain.user;
 
 import com.root.moduledomain.movie.Movie;
+import com.root.moduledomain.movie.dto.MovieRequestDto;
+import com.root.moduledomain.user.dto.UserRequestDto;
 import jakarta.persistence.*;
 import lombok.Getter;
 
@@ -32,6 +34,15 @@ public class User{
 
     @Column(name = "guessted")
     private Boolean guessed = false;
+
+    public User(UserRequestDto user) {
+        this.movies = new ArrayList<>();
+        this.positions = user.getPositions();
+        this.name = user.getName();
+        this.email = user.getEmail();
+        this.password = user.getPassword();
+        this.guessed = user.getGuessed();
+    }
 }
 
 

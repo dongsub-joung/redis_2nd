@@ -1,7 +1,7 @@
-package com.root.moduleapplication.movie.dto;
+package com.root.moduledomain.movie.dto;
 
-import com.root.moduleapplication.position.dto.PositionRequestDto;
-import com.root.moduleapplication.user.dto.UserRequestDto;
+import com.root.moduledomain.user.dto.UserRequestDto;
+import com.root.moduledomain.position.dto.PositionRequestDto;
 import com.root.moduledomain.movie.Movie;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -17,7 +17,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class MovieResponseDto {
-
+    private Long id;
     private List<PositionRequestDto> positions;
     private String title;
     private String description;

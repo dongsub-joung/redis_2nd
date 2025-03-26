@@ -1,12 +1,13 @@
 package com.root.moduledomain.movie;
 
 import com.root.moduledomain.common.Timestamped;
+import com.root.moduledomain.movie.dto.MovieRequestDto;
 import com.root.moduledomain.position.Position;
+import com.root.moduledomain.genre.Genre;
 import com.root.moduledomain.user.User;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import com.root.moduleapplication.dto;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -26,7 +27,7 @@ public class Movie extends Timestamped {
     private List<Position> positions = new ArrayList<>();
 
     @OneToMany
-    private List<Position> themas = new ArrayList<>();
+    private List<Genre> genres = new ArrayList<>();
 
     @ManyToOne(optional = false)
     @JoinTable(name = "movies_userId",
@@ -60,8 +61,8 @@ public class Movie extends Timestamped {
         this.duration = movieRequestDto.getDuration();
         this.imgUrl = movieRequestDto.getImgUrl();
         this.position = movieRequestDto.getPosition();
-        this.user = movieRequestDto.getUser();
-        this.themas= movieRequestDto.getThemas();
+        this.user = new User(movieRequestDto.getUser());
+        this.genres = new ArrayList<>();
     }
 }
 

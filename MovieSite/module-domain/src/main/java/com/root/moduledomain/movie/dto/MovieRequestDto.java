@@ -1,10 +1,9 @@
-package com.root.moduleapplication.movie.dto;
+package com.root.moduledomain.movie.dto;
 
-import com.root.moduleapplication.position.dto.PositionRequestDto;
-import com.root.moduleapplication.user.dto.UserRequestDto;
+import com.root.moduledomain.genre.dto.GenreRequestDto;
 import lombok.*;
-import org.springframework.beans.factory.annotation.Autowired;
-
+import com.root.moduledomain.position.dto.PositionRequestDto;
+import com.root.moduledomain.user.dto.UserRequestDto;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -14,6 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class MovieRequestDto {
+    private Long id;
     private List<PositionRequestDto> positions;
     private String title;
     private String description;
@@ -23,5 +23,5 @@ public class MovieRequestDto {
     private String position;
 
     private UserRequestDto user;
-    p
+    private GenreRequestDto thema;
 }

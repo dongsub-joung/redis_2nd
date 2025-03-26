@@ -75,7 +75,6 @@ subprojects {
 
 project(":module-application") {
     dependencies {
-        implementation project(":module-presentation")
         implementation project(":module-domain")
         implementation project(":module-common")
     }
@@ -84,6 +83,12 @@ project(":module-application") {
 project(":module-domain") {
     dependencies {
         implementation project(":module-common")
-        implementation project(":module-presentation")
+    }
+}
+
+project(":module-infra") {
+    dependencies {
+        implementation project(":module-common")
+        implementation project(":module-application")
     }
 }

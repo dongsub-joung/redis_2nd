@@ -1,8 +1,7 @@
 package com.root.moduleapplication.movie.controller;
 
 
-import com.root.moduleapplication.movie.dto.MovieRequestDto;
-import com.root.moduleapplication.movie.dto.MovieResponseDto;
+import com.root.moduledomain.movie.dto.MovieResponseDto;
 import com.root.moduleapplication.movie.service.MovieServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;

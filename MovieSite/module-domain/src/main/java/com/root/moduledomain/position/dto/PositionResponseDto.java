@@ -1,4 +1,4 @@
-package com.root.moduleapplication.position.dto;
+package com.root.moduledomain.position.dto;
 
 import com.root.moduledomain.movie.dto.MovieRequestDto;
 import lombok.AllArgsConstructor;

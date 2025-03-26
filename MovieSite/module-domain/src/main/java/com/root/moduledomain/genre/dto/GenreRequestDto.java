@@ -1,4 +1,4 @@
-package com.root.moduleapplication.thema;
+package com.root.moduledomain.genre.dto;
 
 import com.root.moduledomain.movie.Movie;
 import lombok.*;
@@ -8,7 +8,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ThemaRequestDto {
+public class GenreRequestDto {
     private Movie movie;
     private long themaTypeId;
 }
