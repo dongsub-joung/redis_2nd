@@ -1,6 +1,7 @@
 package com.root.moduledomain.schedule;
 
 
+import com.root.moduledomain.schedule.dto.ScheduleRequestDto;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,4 +21,10 @@ public class Schedule {
 
     @Column(name = "scheduleTime")
     private String scheduleTime;
+
+    public Schedule(ScheduleRequestDto scheduleRequestDto) {
+        this.id = scheduleRequestDto.getId();
+        this.movieId = scheduleRequestDto.getMovieId();
+        this.scheduleTime = scheduleRequestDto.getScheduleTime();
+    }
 }

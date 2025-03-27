@@ -1,5 +1,6 @@
 package com.root.moduledomain.moviebox;
 
+import com.root.moduledomain.moviebox.dto.MovieBoxRequestDto;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,4 +20,10 @@ public class MovieBox {
 
     @Column(name = "boxNumber")
     private long boxNumber;
+
+    public MovieBox(MovieBoxRequestDto movieBoxRequestDto) {
+        this.movieId = movieBoxRequestDto.getMovieId();
+        this.boxNumber = movieBoxRequestDto.getBoxNumber();
+        this.id = movieBoxRequestDto.getId();
+    }
 }

@@ -33,11 +33,12 @@ public class User{
     @Column(name = "guessted")
     private Boolean guessed = false;
 
-    public User(UserRequestDto user) {
-        this.name = user.getName();
-        this.email = user.getEmail();
-        this.password = user.getPassword();
-        this.guessed = user.getGuessed();
+    public User(UserRequestDto userRequestDto) {
+        this.id = userRequestDto.getId();
+        this.name = userRequestDto.getName();
+        this.email = userRequestDto.getEmail();
+        this.password = userRequestDto.getPassword();
+        this.guessed = userRequestDto.getGuessed();
     }
 }
 
