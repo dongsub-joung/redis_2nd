@@ -4,7 +4,9 @@ import com.root.moduledomain.movie.Movie;
 import com.root.moduledomain.movie.dto.MovieRequestDto;
 import com.root.moduledomain.user.dto.UserRequestDto;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,18 +14,14 @@ import java.util.List;
 @Entity
 @Getter
 @Table(name = "users")
+@NoArgsConstructor
+@AllArgsConstructor
 public class User{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany
-    private List<Movie> movies= new ArrayList<>();
-
-    @Column(name = "positions")
-    private String positions;
-
-    @Column(name = "name")
+    @Column(name = "movieId")
     private String name;
 
     @Column(name = "email")
@@ -36,8 +34,6 @@ public class User{
     private Boolean guessed = false;
 
     public User(UserRequestDto user) {
-        this.movies = new ArrayList<>();
-        this.positions = user.getPositions();
         this.name = user.getName();
         this.email = user.getEmail();
         this.password = user.getPassword();

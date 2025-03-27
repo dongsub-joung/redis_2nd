@@ -12,8 +12,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserRequestDto {
-    private List<MovieRequestDto> movies;
-    private String positions;
+    private long id;
     private String name;
     private String email;
     private String password;

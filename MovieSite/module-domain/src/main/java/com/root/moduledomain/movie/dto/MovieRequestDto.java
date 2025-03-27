@@ -1,10 +1,8 @@
 package com.root.moduledomain.movie.dto;
 
-import com.root.moduledomain.genre.dto.GenreRequestDto;
 import com.root.moduledomain.movie.GenreEnum;
 import lombok.*;
 import com.root.moduledomain.position.dto.PositionRequestDto;
-import com.root.moduledomain.user.dto.UserRequestDto;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -22,7 +20,5 @@ public class MovieRequestDto {
     private Integer duration;
     private String imgUrl;
     private String position;
-
-    private UserRequestDto user;
     private GenreEnum genre;
 }
