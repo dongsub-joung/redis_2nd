@@ -1,6 +1,7 @@
 package com.root.moduledomain.reservation;
 
 
+import com.root.moduledomain.reservation.dto.ReservationRequestDto;
 import com.root.moduledomain.reservation.dto.ReservationResponseDto;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -27,11 +28,10 @@ public class Reservation {
     @Column(name = "userId")
     private Long userId;
 
-    public Reservation(ReservationResponseDto reservationResponseDto) {
-        this.id = reservationResponseDto.getId();
-        this.scheduleId = reservationResponseDto.getScheduleId();
-        this.seatId = reservationResponseDto.getSeatId();
-        this.movieBoxNumber = reservationResponseDto.getMovieBoxNumber();
-        this.userId = reservationResponseDto.getUserId();
+    public Reservation(ReservationRequestDto reservationRequestDto) {
+        this.scheduleId = reservationRequestDto.getScheduleId();
+        this.seatId = reservationRequestDto.getSeatId();
+        this.movieBoxNumber = reservationRequestDto.getMovieBoxNumber();
+        this.userId = reservationRequestDto.getUserId();
     }
 }

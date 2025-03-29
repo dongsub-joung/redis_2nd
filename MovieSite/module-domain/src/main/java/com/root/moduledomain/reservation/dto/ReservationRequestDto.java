@@ -10,7 +10,6 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ReservationRequestDto {
-    private long id;
     private Long scheduleId;
     private Long seatId;
     private Long movieBoxNumber;
