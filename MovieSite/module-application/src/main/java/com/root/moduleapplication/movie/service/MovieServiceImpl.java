@@ -1,12 +1,11 @@
 package com.root.moduleapplication.movie.service;
 
-import com.root.moduledomain.movie.dto.MovieRequestDto;
 import com.root.moduledomain.movie.dto.MovieResponseDto;
 import com.root.moduleapplication.movie.repository.MovieRepository;
 import com.root.moduledomain.movie.Movie;
 import exception.NullCheckException;
-import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -14,6 +13,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
+@EntityScan(basePackages = {"com.root.moduledomain"})
 public class MovieServiceImpl {
 
     private final MovieRepository movieRepository;
